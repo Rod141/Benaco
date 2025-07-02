@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Benaco Adjusters - Professional Claims Adjustment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --dark-gray: #222222;
+            --medium-gray: #444444;
+            --light-gray: #f0f0f0;
+            --accent-blue: #2c5aa0;
+            --accent-gold: #d4af37;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        
+        body {
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--white);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--light-gray);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            height: 80px;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            min-height: 80px;
+        }
+
+        .logo {
+            height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 10px 0;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-blue);
+        }
+        
+        /* Hero Section */
+        .services-hero {
+            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            color: var(--white);
+            padding: 150px 0 80px;
+            text-align: center;
+        }
+        
+        .services-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .services-hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* Service Sections */
+        .service-section {
+            padding: 100px 0;
+            scroll-margin-top: 80px;
+        }
+        
+        .service-section:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+        
+        .service-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .service-icon {
+            font-size: 4rem;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+        }
+        
+        .service-title {
+            font-size: 2.8rem;
+            color: var(--black);
+            margin-bottom: 15px;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .service-subtitle {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .service-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .service-details h3 {
+            font-size: 1.8rem;
+            color: var(--black);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .service-details p {
+            margin-bottom: 20px;
+            color: var(--dark-gray);
+            font-size: 1.1rem;
+        }
+        
+        .service-features {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-features h4 {
+            font-size: 1.5rem;
+            color: var(--accent-blue);
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+        
+        .feature-list {
+            list-style: none;
+        }
+        
+        .feature-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+            font-size: 1.05rem;
+        }
+        
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-list li i {
+            color: var(--accent-gold);
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--accent-blue);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--medium-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .team-expertise {
+            background: var(--accent-blue);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        
+        .team-expertise h4 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .team-expertise p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: var(--black);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-gold);
+            color: var(--black);
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            margin-bottom: 20px;
+        }
+        
+        .footer-logo {
+            height: 200px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo img {
+            height: 100%;
+            width: auto;
+        }
+        
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .service-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .service-title {
+                font-size: 2.2rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <div class="logo">
+                    <img src="logo.png" alt="Benaco Adjusters Logo">
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="index.html#team">Team</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Hero -->
+    <section class="services-hero">
+        <div class="container">
+            <h1>Our Professional Services</h1>
+            <p>Comprehensive claims adjustment solutions backed by 65+ years of industry expertise and unwavering commitment to excellence.</p>
+        </div>
+    </section>
+
+    <!-- Property Claims -->
+    <section id="property-claims" class="service-section">
+        <div class="container">
+            <div class="service-header">
+                <div class="service-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h2 class="service-title">Property Claims</h2>
+                <p class="service-subtitle">Comprehensive assessment for residential and commercial property damage including fire, water, and natural disasters.</p>
+            </div>
+            
+            <div class="service-content">
+                <div class="service-details">
+                    <h3>Expert Property Damage Assessment</h3>
+                    <p>Our certified property adjusters bring over two decades of combined experience in evaluating complex property damage claims. We specialize in thorough investigations that ensure accurate assessments and fair settlements for all parties involved.</p>
+                    
+                    <p>From single-family homes to large commercial complexes, our team has handled property claims ranging from $5,000 to over $50 million. We understand the intricacies of building materials, construction methods, and local building codes across multiple states.</p>
+                    
+                    <p>Our property claims process includes detailed documentation, comprehensive damage assessment, cost estimation using industry-standard software, and coordination with contractors and restoration specialists to ensure accurate repair estimates.</p>
+                </div>
+                
+                <div class="service-features">
+                    <h4>What We Cover</h4>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-fire"></i> Fire and Smoke Damage</li>
+                        <li><i class="fas fa-tint"></i> Water and Flood Damage</li>
+                        <li><i class="fas fa-wind"></i> Wind and Hail Damage</li>
+                        <li><i class="fas fa-bolt"></i> Lightning and Electrical Damage</li>
+                        <li><i class="fas fa-snowflake"></i> Freeze and Ice Damage</li>
+                        <li><i class="fas fa-hammer"></i> Vandalism and Theft</li>
+                        <li><i class="fas fa-tree"></i> Falling Objects</li>
+                        <li><i class="fas fa-exclamation-triangle"></i> Structural Collapse</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">2,500+</div>
+                    <div class="stat-label">Property Claims Handled</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$125M+</div>
+                    <div class="stat-label">Total Claims Value</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+            </div>
+            
+            <div class="team-expertise">
+                <h4>Our Property Claims Team</h4>
+                <p>Led by Gabriel Acosta with 15+ years of experience, our property claims division includes certified adjusters with specialized training in construction, engineering, and restoration. Our team holds certifications from NFIP, IICRC, and maintains continuing education in the latest industry standards and technologies.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Auto Claims -->
+    <section id="auto-claims" class="service-section">
+        <div class="container">
+            <div class="service-header">
+                <div class="service-icon">
+                    <i class="fas fa-car-crash"></i>
+                </div>
+                <h2 class="service-title">Auto Claims</h2>
+                <p class="service-subtitle">Expert evaluation of vehicle damage, liability assessment, and fair settlement for all auto insurance claims.</p>
+            </div>
+            
+            <div class="service-content">
+                <div class="service-details">
+                    <h3>Comprehensive Vehicle Damage Assessment</h3>
+                    <p>Our auto claims specialists possess extensive knowledge in vehicle mechanics, collision repair, and automotive technology. We handle everything from minor fender-benders to total loss evaluations, ensuring accurate assessments that reflect true repair costs and vehicle values.</p>
+                    
+                    <p>With experience in handling claims for luxury vehicles, commercial fleets, motorcycles, and recreational vehicles, our team understands the nuances of different vehicle types and their specific repair requirements.</p>
+                    
+                    <p>We utilize advanced estimating software and maintain relationships with certified repair facilities to provide accurate repair estimates. Our liability investigations include accident reconstruction, witness interviews, and comprehensive scene analysis.</p>
+                </div>
+                
+                <div class="service-features">
+                    <h4>Auto Claims Expertise</h4>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-car"></i> Collision Damage Assessment</li>
+                        <li><i class="fas fa-tools"></i> Mechanical Damage Evaluation</li>
+                        <li><i class="fas fa-calculator"></i> Total Loss Valuations</li>
+                        <li><i class="fas fa-search"></i> Liability Investigations</li>
+                        <li><i class="fas fa-truck"></i> Commercial Vehicle Claims</li>
+                        <li><i class="fas fa-motorcycle"></i> Motorcycle Claims</li>
+                        <li><i class="fas fa-ship"></i> Recreational Vehicle Claims</li>
+                        <li><i class="fas fa-file-alt"></i> Diminished Value Claims</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">1,800+</div>
+                    <div class="stat-label">Auto Claims Processed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">72hrs</div>
+                    <div class="stat-label">Average Response Time</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">First-Call Resolution</div>
+                </div>
+            </div>
+            
+            <div class="team-expertise">
+                <h4>Auto Claims Specialists</h4>
+                <p>Our auto claims team includes ASE-certified technicians and adjusters with specialized training in collision repair, automotive technology, and accident reconstruction. Steven Diaz leads our auto claims division with over 12 years of experience in complex vehicle damage assessment and liability determination.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Liability Claims -->
+    <section id="liability-claims" class="service-section">
+        <div class="container">
+            <div class="service-header">
+                <div class="service-icon">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <h2 class="service-title">Liability Claims</h2>
+                <p class="service-subtitle">Thorough investigation and adjustment of third-party liability claims including bodily injury and property damage.</p>
+            </div>
+            
+            <div class="service-content">
+                <div class="service-details">
+                    <h3>Comprehensive Liability Investigations</h3>
+                    <p>Our liability claims specialists conduct thorough investigations to determine fault, assess damages, and ensure fair settlements. We handle complex liability scenarios including premises liability, product liability, and professional liability claims.</p>
+                    
+                    <p>With extensive experience in litigation support, our team provides detailed reports, expert testimony, and comprehensive documentation that stands up to legal scrutiny. We work closely with attorneys, medical professionals, and expert witnesses to build strong cases.</p>
+                    
+                    <p>Our liability assessment process includes scene investigation, witness interviews, medical record review, expert consultation, and comprehensive damage evaluation to ensure accurate claim resolution.</p>
+                </div>
+                
+                <div class="service-features">
+                    <h4>Liability Coverage Areas</h4>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-user-injured"></i> Bodily Injury Claims</li>
+                        <li><i class="fas fa-home"></i> Premises Liability</li>
+                        <li><i class="fas fa-box"></i> Product Liability</li>
+                        <li><i class="fas fa-briefcase"></i> Professional Liability</li>
+                        <li><i class="fas fa-dog"></i> Animal Liability</li>
+                        <li><i class="fas fa-gavel"></i> Litigation Support</li>
+                        <li><i class="fas fa-stethoscope"></i> Medical Malpractice</li>
+                        <li><i class="fas fa-shield-alt"></i> General Liability</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">950+</div>
+                    <div class="stat-label">Liability Claims</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">85%</div>
+                    <div class="stat-label">Pre-Litigation Settlement</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$45M+</div>
+                    <div class="stat-label">Claims Resolved</div>
+                </div>
+            </div>
+            
+            <div class="team-expertise">
+                <h4>Liability Investigation Team</h4>
+                <p>Our liability team includes former law enforcement investigators, medical professionals, and certified legal nurse consultants. Jorge Acosta leads our liability division with specialized training in accident reconstruction, medical record analysis, and expert witness coordination.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workers' Compensation -->
+    <section id="workers-compensation" class="service-section">
+        <div class="container">
+            <div class="service-header">
+                <div class="service-icon">
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                <h2 class="service-title">Workers' Compensation</h2>
+                <p class="service-subtitle">Specialized handling of workers' compensation claims with focus on fair settlements and return-to-work programs.</p>
+            </div>
+            
+            <div class="service-content">
+                <div class="service-details">
+                    <h3>Expert Workers' Compensation Management</h3>
+                    <p>Our workers' compensation specialists understand the complexities of workplace injury claims, state regulations, and the importance of balancing employee care with cost control. We provide comprehensive claim management from initial report through final resolution.</p>
+                    
+                    <p>With experience across multiple industries including construction, manufacturing, healthcare, and retail, our team understands industry-specific risks and appropriate treatment protocols. We work closely with medical providers, vocational rehabilitation specialists, and employers to ensure optimal outcomes.</p>
+                    
+                    <p>Our approach emphasizes early intervention, appropriate medical care, and effective return-to-work programs that benefit both injured workers and employers while controlling claim costs.</p>
+                </div>
+                
+                <div class="service-features">
+                    <h4>Workers' Comp Services</h4>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-clipboard-check"></i> Initial Claim Investigation</li>
+                        <li><i class="fas fa-user-md"></i> Medical Management</li>
+                        <li><i class="fas fa-calendar-check"></i> Return-to-Work Programs</li>
+                        <li><i class="fas fa-chart-line"></i> Vocational Rehabilitation</li>
+                        <li><i class="fas fa-handshake"></i> Settlement Negotiations</li>
+                        <li><i class="fas fa-file-medical"></i> Independent Medical Exams</li>
+                        <li><i class="fas fa-balance-scale"></i> Fraud Investigation</li>
+                        <li><i class="fas fa-graduation-cap"></i> Employer Training</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">1,200+</div>
+                    <div class="stat-label">Workers' Comp Claims</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">78%</div>
+                    <div class="stat-label">Return-to-Work Success</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">25%</div>
+                    <div class="stat-label">Average Cost Reduction</div>
+                </div>
+            </div>
+            
+            <div class="team-expertise">
+                <h4>Workers' Compensation Specialists</h4>
+                <p>Our workers' compensation team includes certified rehabilitation counselors, occupational health nurses, and adjusters with specialized training in workplace safety and injury management. Hipólito Colon provides senior oversight with over 25 years of experience in workers' compensation claim management.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agricultural Claims -->
+    <section id="agricultural-claims" class="service-section">
+        <div class="container">
+            <div class="service-header">
+                <div class="service-icon">
+                    <i class="fas fa-tractor"></i>
+                </div>
+                <h2 class="service-title">Agricultural Claims</h2>
+                <p class="service-subtitle">Expert assessment of crop and livestock insurance claims with specialized knowledge of agricultural risks.</p>
+            </div>
+            
+            <div class="service-content">
+                <div class="service-details">
+                    <h3>Specialized Agricultural Risk Assessment</h3>
+                    <p>Our agricultural claims specialists possess deep understanding of farming operations, crop cycles, livestock management, and the unique risks facing agricultural businesses. We handle crop insurance, livestock mortality, and farm property claims with expertise that comes from years of rural claim experience.</p>
+                    
+                    <p>Working closely with agricultural extension agents, veterinarians, and farming cooperatives, our team provides accurate assessments that reflect the true impact of losses on agricultural operations. We understand seasonal variations, market conditions, and production costs that affect claim valuations.</p>
+                    
+                    <p>Our agricultural claim process includes field inspections, yield analysis, market research, and coordination with agricultural experts to ensure comprehensive and fair claim resolution.</p>
+                </div>
+                
+                <div class="service-features">
+                    <h4>Agricultural Coverage</h4>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-seedling"></i> Crop Insurance Claims</li>
+                        <li><i class="fas fa-cow"></i> Livestock Mortality</li>
+                        <li><i class="fas fa-warehouse"></i> Farm Property Damage</li>
+                        <li><i class="fas fa-cloud-rain"></i> Weather-Related Losses</li>
+                        <li><i class="fas fa-bug"></i> Pest and Disease Damage</li>
+                        <li><i class="fas fa-tractor"></i> Equipment Claims</li>
+                        <li><i class="fas fa-fire"></i> Barn and Structure Fires</li>
+                        <li><i class="fas fa-chart-bar"></i> Revenue Protection</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">650+</div>
+                    <div class="stat-label">Agricultural Claims</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15,000+</div>
+                    <div class="stat-label">Acres Assessed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">92%</div>
+                    <div class="stat-label">Farmer Satisfaction</div>
+                </div>
+            </div>
+            
+            <div class="team-expertise">
+                <h4>Agricultural Claims Experts</h4>
+                <p>Our agricultural team includes adjusters with farming backgrounds, agricultural science degrees, and specialized training in crop insurance programs. Pablo García leads our agricultural division with extensive experience in both crop and livestock claims across multiple agricultural regions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Claims Consulting -->
+    <section id="claims-consulting" class="service-section">
+        <div class="container">
+            <div class="service-header">
+                <div class="service-icon">
+                    <i class="fas fa-file-contract"></i>
+                </div>
+                <h2 class="service-title">Claims Consulting</h2>
+                <p class="service-subtitle">Professional consulting services for complex claims, litigation support, and claims process optimization.</p>
+            </div>
+            
+            <div class="service-content">
+                <div class="service-details">
+                    <h3>Strategic Claims Consulting Solutions</h3>
+                    <p>Our claims consulting division provides strategic guidance for complex claims, litigation support, and process improvement initiatives. We work with insurance carriers, self-insured entities, and legal professionals to optimize claim outcomes and reduce costs.</p>
+                    
+                    <p>With decades of combined experience in claims management, our consultants provide expert analysis, process audits, staff training, and strategic recommendations that improve claim handling efficiency and reduce exposure.</p>
+                    
+                    <p>Our consulting services include expert witness testimony, file reviews, process optimization, technology implementation, and staff development programs tailored to each client's specific needs and objectives.</p>
+                </div>
+                
+                <div class="service-features">
+                    <h4>Consulting Services</h4>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-search"></i> Expert File Reviews</li>
+                        <li><i class="fas fa-gavel"></i> Litigation Support</li>
+                        <li><i class="fas fa-user-tie"></i> Expert Witness Testimony</li>
+                        <li><i class="fas fa-cogs"></i> Process Optimization</li>
+                        <li><i class="fas fa-graduation-cap"></i> Staff Training Programs</li>
+                        <li><i class="fas fa-laptop"></i> Technology Implementation</li>
+                        <li><i class="fas fa-chart-line"></i> Performance Analytics</li>
+                        <li><i class="fas fa-shield-alt"></i> Risk Assessment</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Consulting Projects</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30%</div>
+                    <div class="stat-label">Average Cost Savings</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Retention</div>
+                </div>
+            </div>
+            
+            <div class="team-expertise">
+                <h4>Senior Consulting Team</h4>
+                <p>Our consulting division is led by Joaquín Acosta, Chairman of the Board, with senior advisors Héctor Cordero and Hipólito Colon providing decades of industry expertise. Our consultants hold advanced certifications and have testified as expert witnesses in numerous high-profile cases.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Work with Industry Experts?</h2>
+            <p>Contact us today to discuss your claims adjustment needs and discover how our expertise can benefit your organization.</p>
+            <a href="index.html#contact" class="btn">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="Logo1.png" alt="Benaco Adjusters Logo">
+                </div>
+                <p>Independent Adjusting Firm with 65+ Years of Excellence</p>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Benaco Adjusters. All rights reserved. | Serving the insurance industry since 1958
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Auto-scroll to service if URL has hash
+        window.addEventListener('load', function() {
+            if (window.location.hash) {
+                const targetElement = document.querySelector(window.location.hash);
+                if (targetElement) {
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
